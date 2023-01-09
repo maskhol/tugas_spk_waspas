@@ -24,16 +24,95 @@ class SPK extends CI_Controller
         $this->load->view('t_alternatif');
     }
 
+    // convert c1
+    public function c1($c1)
+    {
+        switch ($c1) {
+            case $c1 <= 3:
+                return 1;
+                break;
+            case $c1 <= 7:
+                return 2;
+                break;
+            case $c1 <= 11:
+                return 3;
+                break;
+            case $c1 <= 14:
+                return 4;
+                break;
+            case $c1 <= 17:
+                return 5;
+                break;
+        }
+    }
+
+    // convert c2
+    public function c2($c2)
+    {
+        switch ($c2) {
+            case $c2 <= 100:
+                return 1;
+                break;
+            case $c2 <= 250:
+                return 2;
+                break;
+            case $c2 <= 400:
+                return 3;
+                break;
+            case $c2 <= 550:
+                return 4;
+                break;
+            case $c2 <= 700:
+                return 5;
+                break;
+        }
+    }
+
+    // convert c3
+    public function c3($c3)
+    {
+        switch ($c3) {
+            case $c3 <= 400:
+                return 1;
+                break;
+            case $c3 <= 700:
+                return 2;
+                break;
+            case $c3 <= 1000:
+                return 3;
+                break;
+            case $c3 <= 1320:
+                return 4;
+                break;
+            case $c3 <= 1650:
+                return 5;
+                break;
+        }
+    }
+
     // Data ditambahkan ke Database
     public function tambahAlternatif()
     {
         $nama                   = $this->input->post("nama");
-        $c1                     = $this->input->post("c1");
-        $c2                     = $this->input->post("c2");
-        $c3                     = $this->input->post("c3");
+        if ($this->WP_model->check_name('tabel_alternatif', $nama)) {
+            echo "<script>alert('Nama Alternatif sudah ada');</script>";
+            $this->index();
+            return;
+        }
+
+        $jumlah_desa                     = $this->input->post("jumlah_desa");
+        $tinggi_lokasi                     = $this->input->post("tinggi_lokasi");
+        $luas_sawah                     = $this->input->post("luas_sawah");
+
+        $c1                     = $this->c1($jumlah_desa);
+        $c2                     = $this->c2($tinggi_lokasi);
+        $c3                     = $this->c3($luas_sawah);
 
         $data                   = array(
             'nama'              => $nama,
+            'jumlah_desa'       => $jumlah_desa,
+            'tinggi_lokasi'     => $tinggi_lokasi,
+            'luas_sawah'        => $luas_sawah,
             'c1'                => $c1,
             'c2'                => $c2,
             'c3'                => $c3,
@@ -61,12 +140,20 @@ class SPK extends CI_Controller
     {
         $id_alternatif          = $this->input->post("id_alternatif");
         $nama                   = $this->input->post("nama");
-        $c1                     = $this->input->post("c1");
-        $c2                     = $this->input->post("c2");
-        $c3                     = $this->input->post("c3");
+
+        $jumlah_desa            = $this->input->post("jumlah_desa");
+        $tinggi_lokasi          = $this->input->post("tinggi_lokasi");
+        $luas_sawah             = $this->input->post("luas_sawah");
+
+        $c1                     = $this->c1($jumlah_desa);
+        $c2                     = $this->c2($tinggi_lokasi);
+        $c3                     = $this->c3($luas_sawah);
 
         $data                   = array(
             'nama'              => $nama,
+            'jumlah_desa'       => $jumlah_desa,
+            'tinggi_lokasi'     => $tinggi_lokasi,
+            'luas_sawah'        => $luas_sawah,
             'c1'                => $c1,
             'c2'                => $c2,
             'c3'                => $c3,

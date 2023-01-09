@@ -41,4 +41,15 @@ class WP_model extends CI_Model
 	{
 		return $this->db->query($query);
 	}
+
+	public function check_name($tabel, $name)
+	{
+		$this->db->where('nama', $name);
+		$num_rows = $this->db->get($tabel)->num_rows();
+		if ($num_rows > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

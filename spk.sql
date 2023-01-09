@@ -27,29 +27,31 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tabel_alternatif` (
-  `id_alternatif` int(11) NOT NULL,
+  `id_alternatif` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `nama` varchar(255) NOT NULL,
+  `jumlah_desa` int(11) NOT NULL,
+  `tinggi_lokasi` int(11) NOT NULL,
+  `luas_sawah` int(11) NOT NULL,
   `c1` int(11) NOT NULL,
   `c2` int(11) NOT NULL,
-  `c3` int(11) NOT NULL,
-  `c4` int(11) NOT NULL
+  `c3` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tabel_alternatif`
 --
 
-INSERT INTO `tabel_alternatif` (`id_alternatif`, `nama`, `c1`, `c2`, `c3`, `c4`) VALUES
-(1, 'Bukit Hijau', 5, 4, 6, 4),
-(2, 'Jaya Abadi', 4, 6, 6, 4),
-(3, 'Karya Tani', 4, 4, 6, 4),
-(4, 'Seruni', 5, 5, 6, 3),
-(5, 'Tekad', 4, 5, 6, 5),
-(6, 'KWT Nusa Indah', 2, 2, 4, 3),
-(7, 'Malta Jaya', 4, 4, 6, 4),
-(8, 'Huyulali', 3, 3, 6, 4),
-(9, 'Sumber Rezeki A', 4, 4, 6, 4),
-(10, 'Kayu Putih', 3, 3, 4, 3);
+-- INSERT INTO `tabel_alternatif` (`id_alternatif`, `nama`, `c1`, `c2`, `c3`, `c4`) VALUES
+-- (1, 'Bukit Hijau', 5, 4, 6, 4),
+-- (2, 'Jaya Abadi', 4, 6, 6, 4),
+-- (3, 'Karya Tani', 4, 4, 6, 4),
+-- (4, 'Seruni', 5, 5, 6, 3),
+-- (5, 'Tekad', 4, 5, 6, 5),
+-- (6, 'KWT Nusa Indah', 2, 2, 4, 3),
+-- (7, 'Malta Jaya', 4, 4, 6, 4),
+-- (8, 'Huyulali', 3, 3, 6, 4),
+-- (9, 'Sumber Rezeki A', 4, 4, 6, 4),
+-- (10, 'Kayu Putih', 3, 3, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -58,7 +60,7 @@ INSERT INTO `tabel_alternatif` (`id_alternatif`, `nama`, `c1`, `c2`, `c3`, `c4`)
 --
 
 CREATE TABLE `tabel_bobot` (
-  `id_bobot` int(11) NOT NULL,
+  `id_bobot` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `w1` double NOT NULL,
   `w2` double NOT NULL,
   `w3` double NOT NULL,
@@ -79,14 +81,14 @@ INSERT INTO `tabel_bobot` (`id_bobot`, `w1`, `w2`, `w3`, `w4`) VALUES
 --
 -- Indexes for table `tabel_alternatif`
 --
-ALTER TABLE `tabel_alternatif`
-  ADD PRIMARY KEY (`id_alternatif`);
+-- ALTER TABLE `tabel_alternatif`
+--   ADD PRIMARY KEY (`id_alternatif`);
 
 --
 -- Indexes for table `tabel_bobot`
 --
-ALTER TABLE `tabel_bobot`
-  ADD PRIMARY KEY (`id_bobot`);
+-- ALTER TABLE `tabel_bobot`
+--   ADD PRIMARY KEY (`id_bobot`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -95,13 +97,13 @@ ALTER TABLE `tabel_bobot`
 --
 -- AUTO_INCREMENT for table `tabel_alternatif`
 --
-ALTER TABLE `tabel_alternatif`
-  MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+-- ALTER TABLE `tabel_alternatif`
+--   MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tabel_bobot`
 --
-ALTER TABLE `tabel_bobot`
-  MODIFY `id_bobot` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+-- ALTER TABLE `tabel_bobot`
+--   MODIFY `id_bobot` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
