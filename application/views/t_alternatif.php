@@ -30,16 +30,16 @@
                                         <input id="inputText3" type="text" name="nama" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputText3" class="col-form-label">C1</label>
-                                        <input id="inputText3" type="number" name="c1" class="form-control">
+                                        <label for="inputText3" class="col-form-label">Jumlah Desa</label>
+                                        <input id="inputText3" type="number" name="jumlah_desa" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputText3" class="col-form-label">C2</label>
-                                        <input id="inputText3" type="number" name="c2" class="form-control">
+                                        <label for="inputText3" class="col-form-label">Tinggi Lokasi</label>
+                                        <input id="inputText3" type="number" name="tinggi_lokasi" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputText3" class="col-form-label">C3</label>
-                                        <input id="inputText3" type="number" name="c3" class="form-control">
+                                        <label for="inputText3" class="col-form-label">Luas Sawah</label>
+                                        <input id="inputText3" type="number" name="luas_sawah" class="form-control">
                                     </div>
 
 
